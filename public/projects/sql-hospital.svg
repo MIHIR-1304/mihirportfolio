@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <!-- Clean Professional Canvas Gradient -->
+    <linearGradient id="pro-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+
+    <!-- Professional Box Shadow -->
+    <filter id="clean-shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Clean Minimalist Background -->
+  <rect width="800" height="500" fill="url(#pro-bg)"/>
+
+  <!-- Subtle Subtle Grid Lines (Architectural) -->
+  <g stroke="#e2e8f0" stroke-width="0.8">
+    <line x1="40" y1="0" x2="40" y2="500"/>
+    <line x1="760" y1="0" x2="760" y2="500"/>
+    <line x1="0" y1="40" x2="800" y2="40"/>
+    <line x1="0" y1="460" x2="800" y2="460"/>
+  </g>
+
+  <!-- Main Professional Window -->
+  <g transform="translate(48, 36)" filter="url(#clean-shadow)">
+    <!-- Window Body -->
+    <rect width="704" height="428" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+
+    <!-- Window Top Header -->
+    <rect width="704" height="48" rx="12" fill="#ffffff"/>
+    <path d="M 0 48 L 704 48" stroke="#e2e8f0" stroke-width="1.2"/>
+
+    <!-- App Brand Icon -->
+    <rect x="18" y="11" width="26" height="26" rx="6" fill="#2563eb"/>
+    <path d="M 31 16 L 31 32 M 23 24 L 39 24" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- App Title & Tag -->
+    <text x="54" y="28" fill="#0f172a" font-family="'Inter', sans-serif" font-size="13" font-weight="700" letter-spacing="-0.2">CareHealth DBMS</text>
+    <rect x="176" y="15" width="115" height="18" rx="4" fill="#eff6ff" stroke="#bfdbfe"/>
+    <text x="233" y="27" fill="#1d4ed8" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">PostgreSQL 16 · 3NF</text>
+
+    <!-- Tab Buttons -->
+    <g transform="translate(320, 10)">
+      <rect width="260" height="28" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+      <rect x="2" y="2" width="94" height="24" rx="5" fill="#2563eb"/>
+      <text x="49" y="18" fill="#ffffff" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">SQL Studio</text>
+      <text x="144" y="18" fill="#475569" font-family="'Inter', sans-serif" font-size="10" font-weight="500" text-anchor="middle">Table Explorer</text>
+      <text x="220" y="18" fill="#475569" font-family="'Inter', sans-serif" font-size="10" font-weight="500" text-anchor="middle">3NF ERD</text>
+    </g>
+
+    <!-- Download SQL Action -->
+    <rect x="596" y="11" width="92" height="26" rx="6" fill="#0f172a"/>
+    <text x="642" y="27" fill="#ffffff" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">schema.sql</text>
+
+    <!-- SQL Editor Box -->
+    <g transform="translate(18, 62)">
+      <rect width="668" height="136" rx="8" fill="#0f172a" stroke="#1e293b"/>
+      
+      <!-- Editor Top Bar -->
+      <rect width="668" height="24" rx="8" fill="#1e293b"/>
+      <text x="14" y="16" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="9.5">PostgreSQL Query Console — Bed Occupancy &amp; Revenue Analytics</text>
+      <text x="654" y="16" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="end">Ctrl + Enter</text>
+
+      <!-- SQL Syntax Text -->
+      <text x="16" y="44" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="600">SELECT</text>
+      <text x="66" y="44" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="10.5">d.name, COUNT(r.room_id) AS total, SUM(CASE WHEN r.is_occupied THEN 1 ELSE 0 END) AS occupied,</text>
+      
+      <text x="16" y="62" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="600">ROUND</text>
+      <text x="56" y="62" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="10.5">((SUM(CASE WHEN r.is_occupied THEN 1.0 ELSE 0.0 END) / COUNT(r.room_id)) * 100, 1) AS pct,</text>
+
+      <text x="16" y="80" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="600">SUM</text>
+      <text x="42" y="80" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="10.5">(r.daily_rate) AS potential_daily_revenue</text>
+
+      <text x="16" y="98" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="600">FROM</text>
+      <text x="50" y="98" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="10.5">departments d</text>
+      <text x="146" y="98" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="600">JOIN</text>
+      <text x="180" y="98" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="10.5">rooms r</text>
+      <text x="234" y="98" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="600">ON</text>
+      <text x="256" y="98" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="10.5">d.department_id = r.department_id</text>
+
+      <text x="16" y="116" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="600">GROUP BY</text>
+      <text x="80" y="116" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="10.5">d.name</text>
+      <text x="130" y="116" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="600">ORDER BY</text>
+      <text x="194" y="116" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="10.5">pct DESC;</text>
+
+      <!-- Execute Pill -->
+      <rect x="560" y="98" width="94" height="26" rx="5" fill="#2563eb"/>
+      <text x="607" y="115" fill="#ffffff" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Execute SQL</text>
+    </g>
+
+    <!-- Query Results Grid -->
+    <g transform="translate(18, 210)">
+      <!-- Results Bar -->
+      <rect width="668" height="26" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+      <circle cx="14" cy="13" r="3.5" fill="#10b981"/>
+      <text x="24" y="17" fill="#0f172a" font-family="'Inter', sans-serif" font-size="10" font-weight="700">QUERY RESULTS</text>
+      <text x="120" y="17" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9">6 rows in 2.8 ms (B-Tree Scan)</text>
+      <text x="654" y="17" fill="#2563eb" font-family="'Inter', sans-serif" font-size="9.5" font-weight="600" text-anchor="end">Export CSV</text>
+
+      <!-- Table Header -->
+      <rect y="32" width="668" height="24" fill="#f1f5f9"/>
+      <line x1="0" y1="56" x2="668" y2="56" stroke="#e2e8f0"/>
+      <text x="14" y="48" fill="#475569" font-family="'Inter', sans-serif" font-size="9" font-weight="700">DEPARTMENT</text>
+      <text x="180" y="48" fill="#475569" font-family="'Inter', sans-serif" font-size="9" font-weight="700">TOTAL ROOMS</text>
+      <text x="290" y="48" fill="#475569" font-family="'Inter', sans-serif" font-size="9" font-weight="700">OCCUPIED</text>
+      <text x="400" y="48" fill="#475569" font-family="'Inter', sans-serif" font-size="9" font-weight="700">OCCUPANCY RATE</text>
+      <text x="540" y="48" fill="#475569" font-family="'Inter', sans-serif" font-size="9" font-weight="700">POTENTIAL DAILY REV</text>
+
+      <!-- Row 1: Trauma -->
+      <rect y="56" width="668" height="24" fill="#ffffff"/>
+      <line x1="0" y1="80" x2="668" y2="80" stroke="#f1f5f9"/>
+      <text x="14" y="72" fill="#0f172a" font-family="'Inter', sans-serif" font-size="9.5" font-weight="600">Emergency &amp; Trauma</text>
+      <text x="180" y="72" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="9.5">1</text>
+      <text x="290" y="72" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="9.5">1</text>
+      <rect x="400" y="62" width="52" height="15" rx="3" fill="#fef2f2" stroke="#fecaca"/>
+      <text x="426" y="73" fill="#dc2626" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" text-anchor="middle">100.0%</text>
+      <text x="540" y="72" fill="#0f172a" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="600">$1,250.00</text>
+
+      <!-- Row 2: Oncology -->
+      <rect y="80" width="668" height="24" fill="#f8fafc"/>
+      <line x1="0" y1="104" x2="668" y2="104" stroke="#f1f5f9"/>
+      <text x="14" y="96" fill="#0f172a" font-family="'Inter', sans-serif" font-size="9.5" font-weight="600">Oncology</text>
+      <text x="180" y="96" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="9.5">1</text>
+      <text x="290" y="96" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="9.5">1</text>
+      <rect x="400" y="86" width="52" height="15" rx="3" fill="#fef2f2" stroke="#fecaca"/>
+      <text x="426" y="97" fill="#dc2626" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" text-anchor="middle">100.0%</text>
+      <text x="540" y="96" fill="#0f172a" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="600">$1,850.00</text>
+
+      <!-- Row 3: Cardiology -->
+      <rect y="104" width="668" height="24" fill="#ffffff"/>
+      <line x1="0" y1="128" x2="668" y2="128" stroke="#f1f5f9"/>
+      <text x="14" y="120" fill="#0f172a" font-family="'Inter', sans-serif" font-size="9.5" font-weight="600">Cardiology</text>
+      <text x="180" y="120" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="9.5">2</text>
+      <text x="290" y="120" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="9.5">1</text>
+      <rect x="400" y="110" width="46" height="15" rx="3" fill="#eff6ff" stroke="#bfdbfe"/>
+      <text x="423" y="121" fill="#2563eb" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" text-anchor="middle">50.0%</text>
+      <text x="540" y="120" fill="#0f172a" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="600">$3,700.00</text>
+
+      <!-- Row 4: Neurology -->
+      <rect y="128" width="668" height="24" fill="#f8fafc"/>
+      <line x1="0" y1="152" x2="668" y2="152" stroke="#f1f5f9"/>
+      <text x="14" y="144" fill="#0f172a" font-family="'Inter', sans-serif" font-size="9.5" font-weight="600">Neurology</text>
+      <text x="180" y="144" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="9.5">2</text>
+      <text x="290" y="144" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="9.5">1</text>
+      <rect x="400" y="134" width="46" height="15" rx="3" fill="#eff6ff" stroke="#bfdbfe"/>
+      <text x="423" y="145" fill="#2563eb" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" text-anchor="middle">50.0%</text>
+      <text x="540" y="144" fill="#0f172a" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="600">$1,700.00</text>
+
+      <!-- Row 5: Orthopedics -->
+      <rect y="152" width="668" height="24" fill="#ffffff"/>
+      <line x1="0" y1="176" x2="668" y2="176" stroke="#f1f5f9"/>
+      <text x="14" y="168" fill="#0f172a" font-family="'Inter', sans-serif" font-size="9.5" font-weight="600">Orthopedics</text>
+      <text x="180" y="168" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="9.5">2</text>
+      <text x="290" y="168" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="9.5">1</text>
+      <rect x="400" y="158" width="46" height="15" rx="3" fill="#eff6ff" stroke="#bfdbfe"/>
+      <text x="423" y="169" fill="#2563eb" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" text-anchor="middle">50.0%</text>
+      <text x="540" y="168" fill="#0f172a" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="600">$1,270.00</text>
+    </g>
+
+    <!-- Bottom Status Bar -->
+    <rect y="404" width="704" height="24" rx="12" fill="#f8fafc"/>
+    <line x1="0" y1="404" x2="704" y2="404" stroke="#e2e8f0"/>
+    <text x="18" y="420" fill="#64748b" font-family="'Inter', sans-serif" font-size="9">Normalized to 3NF · 7 Relational Tables · Foreign Key Cascade Guards</text>
+    <text x="686" y="420" fill="#2563eb" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="end">Engine: PostgreSQL 16.2</text>
+  </g>
+</svg>
